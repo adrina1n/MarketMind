@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "PowerShell(npx skills@latest add mattpocock/skills)",
+      "PowerShell(winget install *)",
+      "PowerShell(gh auth *)",
+      "PowerShell(python --version)",
+      "PowerShell(pip install *)",
+      "PowerShell(py *)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell(uvicorn app.main:app *)",
+      "PowerShell(git add *)"
+    ]
+  }
+}
