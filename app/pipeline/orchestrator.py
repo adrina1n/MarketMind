@@ -54,7 +54,10 @@ async def generate_report(
     geography: str,
 ) -> list[ReportSection]:
     sections: list[ReportSection] = []
-    for category in get_all_categories():
+    categories = get_all_categories()
+    for i, category in enumerate(categories):
+        if i > 0:
+            await asyncio.sleep(5)
         try:
             section = await generate_section(client, sector, geography, category.name)
             sections.append(section)
