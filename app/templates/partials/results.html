@@ -1,12 +1,36 @@
-<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-    <h2 class="text-xl font-semibold text-gray-800 mb-4">Resultats</h2>
-    <div class="bg-gray-50 rounded-md p-4 border border-gray-100">
-        <p class="text-sm text-gray-600 mb-2">Etude demandee :</p>
-        <ul class="text-sm text-gray-800 space-y-1">
-            <li><span class="font-medium">Client :</span> {{ client }}</li>
-            <li><span class="font-medium">Secteur :</span> {{ sector }}</li>
-            <li><span class="font-medium">Geographie :</span> {{ geography }}</li>
-        </ul>
-    </div>
-    <p class="mt-4 text-sm text-gray-500 italic">Pipeline non connecte — le rapport apparaitra ici (issue #2).</p>
+{% if error %}
+<div class="bg-red-50 border border-red-200 rounded-lg p-6 text-red-700">
+    <p class="font-medium">Erreur</p>
+    <p class="text-sm mt-1">{{ error }}</p>
 </div>
+{% elif sections %}
+{% for item in sections %}
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-6">
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">{{ item.section.title }}</h2>
+
+    <div class="prose prose-sm max-w-none">
+        {{ item.html | safe }}
+    </div>
+
+    {% if item.section.sources %}
+    <div class="mt-6 pt-4 border-t border-gray-200">
+        <h3 class="text-sm font-semibold text-gray-600 mb-2">Sources</h3>
+        <ol class="text-xs text-gray-500 space-y-1 list-decimal list-inside">
+            {% for src in item.section.sources %}
+            <li>
+                <a href="{{ src.url }}" target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+                    {{ src.title }}
+                </a>
+                <span class="text-gray-400">({{ src.domain }})</span>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% endif %}
+</div>
+{% endfor %}
+{% else %}
+<div class="bg-gray-50 rounded-lg p-6 text-gray-500 text-sm italic">
+    Pipeline non connecte.
+</div>
+{% endif %}
