@@ -6,6 +6,7 @@ class SourcedResult(BaseModel):
     snippet: str
     url: str
     domain: str
+    relevance_score: float = 0.0
 
 
 class ReportSection(BaseModel):
@@ -14,3 +15,5 @@ class ReportSection(BaseModel):
     markdown: str
     sources: list[SourcedResult]
     confidence: float
+    data_available: bool = True
+    missing_details: list[str] = []

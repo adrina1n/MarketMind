@@ -52,6 +52,7 @@ Redige la section "Environnement de marche" couvrant trois volets : tendances, f
 - N'invente AUCUNE donnee
 - Privilegie les donnees recentes (2023-2025)
 - Si une information n'est pas disponible : "Donnee non disponible dans les sources consultees."
+- Si les sources se contredisent, presente les differentes valeurs avec leurs sources respectives
 
 ## Format de sortie (Markdown strict)
 

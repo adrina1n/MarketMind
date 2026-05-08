@@ -49,6 +49,7 @@ Ne couvre que les tendances pertinentes pour ce secteur et cette geographie.
 - N'invente AUCUNE tendance — base-toi uniquement sur les resultats de recherche
 - Privilegie les donnees recentes (2023-2025)
 - Si une tendance majeure n'apparait pas dans les sources, signale-le
+- Si les sources se contredisent, presente les differentes valeurs avec leurs sources respectives
 
 ## Format de sortie (Markdown strict)
 

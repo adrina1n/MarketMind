@@ -47,6 +47,7 @@ Redige la section "Paysage concurrentiel" en identifiant et classant les princip
 - N'invente AUCUNE donnee — surtout pas de parts de marche
 - Si les parts de marche ne sont pas disponibles, indique "Parts de marche non disponibles publiquement"
 - Privilegie les donnees recentes (2023-2025)
+- Si les sources se contredisent, presente les differentes valeurs avec leurs sources respectives
 
 ## Format de sortie (Markdown strict)
 

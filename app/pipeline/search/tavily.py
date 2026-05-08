@@ -29,6 +29,7 @@ class TavilySearch(SearchEngine):
                 snippet=r.get("content", ""),
                 url=r.get("url", ""),
                 domain=urlparse(r.get("url", "")).netloc,
+                relevance_score=r.get("score", 0.0),
             )
             for r in data.get("results", [])
         ]

@@ -43,6 +43,7 @@ async def generate_section(
             markdown="Aucun resultat de recherche trouve. Verifiez votre cle API Tavily.",
             sources=[],
             confidence=0.0,
+            data_available=False,
         )
 
     return await synthesizer.synthesize(all_results, category, context)
@@ -70,6 +71,7 @@ async def generate_report(
                     markdown=f"Erreur lors de la generation de cette section : {e}",
                     sources=[],
                     confidence=0.0,
+                    data_available=False,
                 )
             )
     return sections
